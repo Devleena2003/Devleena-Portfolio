@@ -1,6 +1,7 @@
 // src/sections/Education.tsx
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 // All necessary icons are imported directly into this file
 import {
   CodeXml,
@@ -64,6 +65,14 @@ const educationData: EducationItem[] = [
 // --- COMPONENT LOGIC & JSX ---
 
 const Education = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   const cardVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
@@ -74,22 +83,48 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-24">
+    <section ref={sectionRef} id="education" className="py-24">
       <div className="text-left mb-16">
         <h2 className="text-5xl mb-10 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Education</h2>
-       
       </div>
 
       <div className="relative">
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-700"></div>
+        {/* Static background line */}
+        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-700/30"></div>
+
+        {/* Animated progress line */}
+        <motion.div
+          className="absolute left-4 top-0 w-0.5 bg-gradient-to-b from-purple-500 to-fuchsia-500"
+          style={{
+            height: lineHeight
+          }}
+        ></motion.div>
 
         {educationData.map((edu, index) => (
           <div key={index} className="relative pl-12 pb-16">
-            <div className="absolute left-4 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-purple-900/50"></div>
-            <p className="absolute left-10 text-sm font-semibold text-purple-400">
-              {edu.date}
-            </p>
+            {/* Timeline dot */}
+            <motion.div
+              className="absolute left-4 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-purple-900/50 z-10"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
+              viewport={{ once: true }}
+            ></motion.div>
 
+            {/* Date box - positioned above card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="mb-4"
+            >
+              <span className="inline-block px-4 py-2 text-sm font-semibold text-purple-300 bg-purple-900/40 rounded-full border border-purple-700/60 shadow-lg whitespace-nowrap">
+                {edu.date}
+              </span>
+            </motion.div>
+
+            {/* Card content */}
             <motion.div
               variants={cardVariants}
               initial="hidden"

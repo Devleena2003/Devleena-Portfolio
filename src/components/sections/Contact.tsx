@@ -103,7 +103,7 @@ const Contact = () => {
             </div>
             <div>
               <Label htmlFor="message" className="text-slate-300">Your Message</Label>
-              <Textarea id="message" name="message" placeholder="Your feedback or message..." required rows={10} value={formData.message} onChange={handleInputChange} className="mt-2 bg-slate-800 border-slate-700 focus:ring-purple-500" />
+              <Textarea id="message" name="message" placeholder="Your feedback or message..." required rows={30} value={formData.message} onChange={handleInputChange} className="mt-2 bg-slate-800 border-slate-700 focus:ring-purple-500" />
             </div>
             <div className="flex flex-col items-start gap-4">
                <Button type="submit" disabled={status === 'loading'} className="w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white flex items-center justify-center group bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600">
