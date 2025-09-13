@@ -1,6 +1,7 @@
 // src/sections/Experiences.tsx
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { cn } from "../../lib/utils";
 
 // ... (ExperienceItem type and experiencesData array remain exactly the same)
@@ -53,7 +54,6 @@ const experiencesData: ExperienceItem[] = [
 
 ];
 
-
 const cardVariants = {
   hidden: (direction: number) => ({
     opacity: 0,
@@ -70,20 +70,44 @@ const cardVariants = {
 };
 
 const Experiences = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  
   return (
-    <section id="experiences" className="py-24">
+    <section ref={sectionRef} id="experiences" className="py-24">
       <div className="text-left mb-10">
         <h2 className="text-5xl mb-10 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Experiences</h2>
 
       </div>
       <div className="relative">
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-slate-700"></div>
+        {/* Static background line */}
+        <div className="absolute left-1/2  top-0 bottom-0 w-0.5 bg-slate-700/30"></div>
+        
+        {/* Animated progress line */}
+        <motion.div 
+          className="absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-purple-500 to-fuchsia-500"
+          style={{ 
+            height: lineHeight,
+           
+          }}
+        ></motion.div>
 
         {experiencesData.map((item, index) => {
           const isRightSide = index % 2 === 0;
           return (
-            <div key={index} className="relativemb-8 md:mb-16 flex justify-center">
-              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-purple-900/50"></div>
+            <div key={index} className="relative mb-8 md:mb-16 flex justify-center">
+              <motion.div 
+                className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-purple-900/50"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
+              ></motion.div>
 
               <motion.div
                 variants={cardVariants}

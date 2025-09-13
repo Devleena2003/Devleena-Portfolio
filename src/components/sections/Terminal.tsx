@@ -7,6 +7,11 @@ import type { KeyboardEvent } from 'react';
 
 const cliExperiences = [
   {
+    date: "October 2025 - Present",
+    title: "Software Engineer",
+    company: "Aarish Technologies",
+  },
+  {
     date: "September 2023 - Present",
     title: "Co-Founder",
     company: "SHEvolution",

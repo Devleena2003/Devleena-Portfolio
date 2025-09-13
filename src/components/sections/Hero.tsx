@@ -5,29 +5,32 @@ import { TypeAnimation } from "react-type-animation";
 import profileImage from "../../../src/assets/profile.jpg";
 import { Button } from "../../components/ui/button";
 import { Download } from "lucide-react";
-import { cn } from "../../lib/utils";
-
-
-import React from "react";
-// 
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen max-w-full flex items-center justify-between relative">
 
-      <div className=" flex flex-col md:flex-row items-center justify-between px-10 gap-12">
+   
+
+    <section id="home" className="min-h-screen  flex items-center justify-between relative ">
+
+      <div className=" flex flex-col md:flex-row items-center justify-between px-10 gap-16 md:gap-20 lg:gap-27">
+
 
         {/* Left Side: Content */}
         <div className="md:w-full text-center md:text-left">
           <h1 className="text-4xl lg:text-5xl font-bold text-slate-50 mb-4">
-            Hey, I am <br /> <span className="md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Devleena</span>
+
+            
+
+            Hey, I am <br /> <span className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Devleena</span>
+
           </h1>
 
           {/* Typing Animation */}
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
-              "A Passionate Frontend Developer",
+              "A Passionate Developer",
               1500, // wait 1.5s
               "A Creative Problem Solver",
               1500,
@@ -44,7 +47,10 @@ const Hero = () => {
             A full-stack developer and community builder passionate about crafting scalable tech solutions and empowering others through mentorship and collaboration.
           </p>
           <div className="mt-10">
+
             <a href="/Devleena_Das_CV_2025.pdf" download>
+
+          
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600"
