@@ -77,7 +77,7 @@ const Education = () => {
     <section id="education" className="py-24">
       <div className="text-left mb-16">
         <h2 className="text-5xl mb-10 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Education</h2>
-       
+
       </div>
 
       <div className="relative">
@@ -86,7 +86,7 @@ const Education = () => {
         {educationData.map((edu, index) => (
           <div key={index} className="relative pl-12 pb-16">
             <div className="absolute left-4 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full ring-4 ring-purple-900/50"></div>
-            <p className="absolute left-10 text-sm font-semibold text-purple-400">
+            <p className="absolute left-10 rounded-full border-1 border-pink-500 bg-purple-950/40 px-3 py-2 text-xs font-medium text-purple-200 backdrop-blur-sm transition-all hover:border-pink-600/80 hover:bg-purple-950/60 hover: cursor-pointer">
               {edu.date}
             </p>
 
@@ -95,7 +95,7 @@ const Education = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="p-6 rounded-lg border border-slate-700 bg-slate-800/50 backdrop-blur-sm shadow-lg"
+              className="p-6 relative top-10 rounded-lg border border-slate-700 bg-slate-800/50 backdrop-blur-sm shadow-lg"
             >
               <h3 className="text-2xl font-bold text-slate-100">{edu.degree}</h3>
               <p className="text-slate-400 mt-1">{edu.university}</p>
