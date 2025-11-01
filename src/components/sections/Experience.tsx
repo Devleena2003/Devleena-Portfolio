@@ -6,7 +6,7 @@ import { cn } from "../../lib/utils";
 // ... (ExperienceItem type and experiencesData array remain exactly the same)
 type ExperienceItem = {
   date: string;
- 
+
   title: string;
   company: string;
   description: string;
@@ -14,9 +14,27 @@ type ExperienceItem = {
 };
 
 const experiencesData: ExperienceItem[] = [
+    {
+    date: "October 2025 - Present",
+
+    title: "Software Engineer",
+    company: "Aarish Technology",
+    description:
+      "Contributing to the development of an advanced browser-based simulation platform, focusing on modern UI creation, feature integration, and performance optimization. Collaborated closely with senior engineers and product designers to translate Figma designs into responsive interfaces. Responsible for fixing layout and functionality issues, implementing interactive components, and improving user experience across multiple panels. Also assisted in system setup, debugging environment issues, and ensuring smooth local deployment.",
+    skills: [ "React.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "UI Development",
+    "Debugging",
+    "Performance Optimization",
+    "Figma to Code Implementation",
+    "Cross-functional Collaboration",
+    "Linux (Ubuntu)",
+    "Version Control (Git)"],
+  },
   {
     date: "September 2023 - Present",
-    
+
     title: "Co-founder",
     company: "SHEvolution",
     description:
@@ -25,14 +43,14 @@ const experiencesData: ExperienceItem[] = [
   },
   {
     date: "July 2022 - September 2024",
-   
+
     title: "Core Team Member",
     company: "Google Developer Students Club",
     description:
       "As a core team member of GDSC at my college, I led and contributed to technical events, hackathons, and coding workshops that encouraged student participation in real-world tech. I played an active role in managing speaker sessions, hands-on projects, and collaborative learning events. I also mentored juniors in areas like frontend development, Git/GitHub, and open-source contributions, helping foster a stronger developer ecosystem on campus.",
     skills: ["Open Source", "Hackathon ", "Event Management", "Project Collaboration"],
   },
- 
+
 ];
 
 
@@ -54,9 +72,9 @@ const cardVariants = {
 const Experiences = () => {
   return (
     <section id="experiences" className="py-24">
-     <div className="text-left mb-10">
+      <div className="text-left mb-10">
         <h2 className="text-5xl mb-10 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Experiences</h2>
-       
+
       </div>
       <div className="relative">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-slate-700"></div>
@@ -88,10 +106,10 @@ const Experiences = () => {
                     !isRightSide && "md:flex-row-reverse"
                   )}
                 >
-                  <span className="rounded-full bg-orange-900/60 border border-orange-700/80 px-3 py-1 text-sm font-semibold text-orange-200">
+                  <span className="rounded-full border-1 border-pink-500 bg-purple-950/40 px-3 py-2 text-xs font-medium text-purple-200 backdrop-blur-sm transition-all hover:border-pink-600/80 hover:bg-purple-950/60 hover: cursor-pointer">
                     {item.date}
                   </span>
-                  
+
                 </div>
 
                 <h3 className={cn("text-xl font-bold text-slate-100", !isRightSide && "md:text-right")}>

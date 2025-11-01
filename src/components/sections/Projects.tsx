@@ -47,8 +47,22 @@ const projectsData: Project[] = [
     title: "AccessRide – An Accessibility-Focused Ride Booking App",
     description: "A React Native app designed to provide inclusive and user-friendly transportation for people with disabilities.",
     tech: ["React Native", "Expo", "Firebase", "Google Maps API"],
-    image: "/projects/achievo.png",
+    image: "/location.png",
     category: "Mobile App",
+  },
+     {
+    title: "Splitr",
+    description: "A full-stack collaborative expense splitting app.",
+    tech: ["NextJS", "Convex", "Inngest","TailwindCSS","Shadcn UI"],
+    image: "/splitr.png",
+    category: "Web App",
+  },
+        {
+    title: "AI Resume Analyzer",
+    description: "An AI-powered Resume Analyzer.Upload candidate resumes, and use AI to automatically evaluate that match job requirements. ",
+    tech: ["ReactJS", "TypeScript", "PuterJS", "React Router","TailwindCSS","Zustand","Claude AI"],
+    image: "/resumind.png",
+    category: "AI/ML",
   },
   {
     title: "Reloop – A Reverse Logistics Optimization Platform",
@@ -64,6 +78,7 @@ const projectsData: Project[] = [
     image: "/merngpt.png",
     category: "AI/ML",
   },
+ 
 ];
 
 const Projects = () => {

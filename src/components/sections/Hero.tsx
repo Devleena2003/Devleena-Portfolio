@@ -13,7 +13,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen max-w-full flex items-center justify-evenly relative">
+    <section id="home" className="min-h-screen max-w-full flex items-center justify-between relative">
 
       <div className=" flex flex-col md:flex-row items-center justify-between px-10 gap-12">
 
