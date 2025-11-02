@@ -16,8 +16,7 @@ import Education from './components/sections/Education';
 // import Achievements from './components/sections/Achievements';
 import BackgroundAnimation from "./components/layout/Bg";
 import Contact from './components/sections/Contact';
-import GitHub from './components/sections/GitHub';
-import CodingProfiles from './components/sections/codingProfiles';
+
 import Achievements from './components/sections/Achievements';
 
 // We create a dedicated component for the GUI to keep the main App return clean.

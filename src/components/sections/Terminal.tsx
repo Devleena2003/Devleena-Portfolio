@@ -60,7 +60,7 @@ const Terminal = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const processCommand = (command: string) => {
-    const [cmd, ...args] = command.trim().split(' ');
+    const [cmd] = command.trim().split(' ');
     let output: React.ReactNode = '';
 
     switch (cmd.toLowerCase()) {

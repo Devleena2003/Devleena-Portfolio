@@ -16,11 +16,11 @@ import type { LucideProps } from "lucide-react";
 // Import specific tech icons from react-icons
 import {
   FaPython,
-  FaJava,
+ 
   FaReact,
   FaNodeJs,
   FaDatabase,
-  FaServer,
+
   FaGitAlt, // New
   FaGithub, // New
   FaMicrosoft,
@@ -29,12 +29,11 @@ import {
 import {
   SiJavascript,
   SiCplusplus,
-  SiElixir,
+ 
   SiExpress,
   SiTailwindcss,
-  SiDjango,
-  SiSpringboot,
-  SiPhoenixframework,
+ 
+ 
   SiMongodb,
   SiMysql,
   SiPostgresql,
