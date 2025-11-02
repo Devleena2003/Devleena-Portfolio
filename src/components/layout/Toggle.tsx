@@ -2,7 +2,7 @@ import { useMode } from "../../context/Mode";
 
 const ModeToggle = () => {
   const { mode, toggleMode } = useMode();
-  const isCLI = mode === 'cli';
+
 
   return (
 
